@@ -7,6 +7,16 @@
   "engines": {
     "vscode": "^1.80.0"
   },
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/vikas2286/ai-agent-review"
+},
+"homepage": "https://github.com/vikas2286/ai-agent-review",
+"bugs": {
+  "url": "https://github.com/vikas2286/ai-agent-review/issues"
+},
+"license": "MIT",
+
   "categories": [
     "Other"
   ],
