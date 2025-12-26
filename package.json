@@ -2,34 +2,32 @@
   "name": "ai-code-reviewer-simple",
   "displayName": "AI Code Reviewer by Nothing17",
   "description": "AI-powered code review using Gemini",
-  "version": "1.0.1",
-  "main":"./out/extension.js",
+  "version": "1.0.2",
+  "main": "./out/extension.js",
   "publisher": "Nothing17",
   "engines": {
     "vscode": "^1.80.0"
   },
   "repository": {
-  "type": "git",
-  "url": "https://github.com/vikas2286/ai-agent-review"
-},
-"homepage": "https://github.com/vikas2286/ai-agent-review",
-"bugs": {
-  "url": "https://github.com/vikas2286/ai-agent-review/issues"
-},
-"license": "MIT",
-
+    "type": "git",
+    "url": "https://github.com/vikas2286/ai-agent-review"
+  },
+  "homepage": "https://github.com/vikas2286/ai-agent-review",
+  "bugs": {
+    "url": "https://github.com/vikas2286/ai-agent-review/issues"
+  },
+  "license": "MIT",
   "categories": [
     "Other"
   ],
   "activationEvents": [
-  "onStartupFinished",
-  "onCommand:aiCodeReviewer.openChat",
-  "onCommand:aiCodeReviewer.reviewCurrentFile",
-  "onCommand:aiCodeReviewer.reviewSelection",
-  "onCommand:aiCodeReviewer.explainCode",
-  "onCommand:aiCodeReviewer.setApiKey"
-],
-  
+    "onStartupFinished",
+    "onCommand:aiCodeReviewer.openChat",
+    "onCommand:aiCodeReviewer.reviewCurrentFile",
+    "onCommand:aiCodeReviewer.reviewSelection",
+    "onCommand:aiCodeReviewer.explainCode",
+    "onCommand:aiCodeReviewer.setApiKey"
+  ],
   "contributes": {
     "commands": [
       {
@@ -38,10 +36,9 @@
         "category": "AI Reviewer"
       },
       {
-       "command": "aiCodeReviewer.openChat",
+        "command": "aiCodeReviewer.openChat",
         "title": "AI Code Reviewer: Open Chat"
       },
-
       {
         "command": "aiCodeReviewer.reviewCurrentFile",
         "title": "Review Current File",
@@ -59,25 +56,22 @@
       }
     ],
     "menus": {
-  "editor/title": [
-    {
-      "command": "aiCodeReviewer.openChat",
-      "when": "editorTextFocus",
-      "group": "navigation@1"
-    }
-  ]
-},
-
+      "editor/title": [
+        {
+          "command": "aiCodeReviewer.openChat",
+          "when": "editorTextFocus",
+          "group": "navigation@1"
+        }
+      ]
+    },
     "views": {
-  "explorer": [
-    {
-      "id": "aiCodeReviewer.historyView",
-      "name": "AI Review History"
-    }
-  ]
-},
-
-
+      "explorer": [
+        {
+          "id": "aiCodeReviewer.historyView",
+          "name": "AI Review History"
+        }
+      ]
+    },
     "keybindings": [
       {
         "command": "aiCodeReviewer.reviewCurrentFile",
@@ -85,10 +79,10 @@
         "mac": "cmd+shift+r"
       },
       {
-      "command": "aiCodeReviewer.openChat",
-      "key": "ctrl+shift+a",
-      "when": "editorTextFocus"
-    },
+        "command": "aiCodeReviewer.openChat",
+        "key": "ctrl+shift+a",
+        "when": "editorTextFocus"
+      },
       {
         "command": "aiCodeReviewer.reviewSelection",
         "key": "ctrl+shift+e",
