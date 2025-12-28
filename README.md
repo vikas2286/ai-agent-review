@@ -4,7 +4,7 @@
 
 Transform your code review process with intelligent AI assistance. Get instant feedback, bug detection, security audits, and improvement suggestions directly in VS Code.
 
-![Version](https://img.shields.io/badge/version-1.0.1-blue)
+![Version](https://img.shields.io/badge/version-1.0.4-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 ## ✨ Features

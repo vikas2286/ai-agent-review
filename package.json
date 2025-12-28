@@ -2,7 +2,7 @@
   "name": "ai-code-reviewer-simple",
   "displayName": "AI Code Reviewer by Nothing17",
   "description": "AI-powered code review using Gemini",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "./out/extension.js",
   "publisher": "Nothing17",
   "engines": {

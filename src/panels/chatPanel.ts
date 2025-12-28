@@ -40,29 +40,44 @@ export class ChatPanel {
                         panel.webview.postMessage({ command: 'clearChat' });
                    } else if (message.command === 'includeCode') {
 
-    vscode.window.showOpenDialog({
+    const result = await vscode.window.showOpenDialog({
         canSelectFiles: true,
         canSelectMany: false,
         openLabel: 'Include File'
-    }).then(async result => {
+    });
 
-        if (!result || result.length === 0) {
-            return;
-        }
+    if (!result || result.length === 0) {
+        return;
+    }
 
-        const fileUri = result[0];
-        const document = await vscode.workspace.openTextDocument(fileUri);
+    const fileUri = result[0];
+    const document = await vscode.workspace.openTextDocument(fileUri);
 
-        const code = document.getText();
-        const language = document.languageId;
+    const code = document.getText();
+    const language = document.languageId;
 
-        panel.webview.postMessage({
-            command: 'addContext',
-            code,
-            language
-        });
+    const injectedMessage =
+`Here is the file the user wants help with:
+
+Language: ${language}
+
+\`\`\`${language}
+${code}
+\`\`\`
+
+Use this file as the main context when answering the user.`;
+
+    // 🔥 CRITICAL FIX: give the file to the AI
+    ChatPanel.messages.push({ role: 'user', content: injectedMessage });
+
+    // Show file nicely in chat UI
+    panel.webview.postMessage({
+        command: 'addContext',
+        code,
+        language
     });
 }
+
 
                 },
                 undefined,
